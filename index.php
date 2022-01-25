@@ -9,8 +9,15 @@
 
 $to = [
     'j.conan@fondationface.org',
-    ...
+    'oliolive02@hotmail.fr'
 ];
+$subject = "Mes actualités";
+$header = array(
+    'Reply-to' => 'olivier.peuchet02@gmail.com',
+    'X-Mailer' => 'PHP/' . phpversion(),
+    'Mime-Version' => '1.0',
+    'Content-type' => 'text/html; charset=utf8'
+);
 
 $html = '
     <html lang="fr">
@@ -20,8 +27,15 @@ $html = '
         <body>
             <div>
                 <!-- Vos actualités ici -->
+                je me suis lever en retard se matin voila voila !!
             </div>
         </body>
     </html>
 ';
 
+if (mail($to, $subject, $html)){
+    echo "les mail sont envoyer";
+}
+else {
+    echo "echec des envoies";
+}
